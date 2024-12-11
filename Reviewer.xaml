@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizMaker.Reviewer"
+             BackgroundColor="#3ebca3">
+
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#EA8D8D" Offset="0" />
+            <GradientStop Color="#A890FE" Offset="0.8" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center" Margin="20">
+        
+            <!-- Image and Title Section -->
+            <StackLayout Spacing="15" HorizontalOptions="Center">
+                <!-- Image with shadow effect -->
+                <Image Source="quizlogo.png"
+                       WidthRequest="180"
+                       HeightRequest="180"
+                       HorizontalOptions="Center"
+                       Aspect="AspectFit">
+                    <Image.Shadow>
+                        <Shadow Brush="Black" Opacity="0.5" Radius="10" />
+                    </Image.Shadow>
+                </Image>
+                <Label Text="Reviewer"
+                       FontSize="32"
+                       HorizontalOptions="Center"
+                       TextColor="Black" 
+                       FontFamily="BOLD"/>
+            </StackLayout>
+
+            <!-- Loading Indicator -->
+            <ActivityIndicator x:Name="LoadingIndicator"
+                               IsRunning="False"
+                               IsVisible="False"
+                               HorizontalOptions="Center"
+                               Color="#f5a623" />
+
+            <!-- Review Section (CollectionView should be scrollable without ScrollView) -->
+            <CollectionView x:Name="ReviewCollectionView"
+                            ItemsSource="{Binding QuestionsAndAnswers}"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="15" Spacing="8" Margin="10" HorizontalOptions="FillAndExpand">
+                            <!-- Question Label -->
+                            <Label Text="{Binding Question}"
+                                   FontSize="20"
+                                   TextColor="#333333"
+                                   FontFamily="roboto"
+                                   FontAttributes="Bold" />
+                            <!-- Answer Label -->
+                            <Label Text="{Binding Answer}"
+                                   FontSize="16"
+                                   TextColor="#ffffff" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Refresh Button with Gradient and Shadow -->
+            <Button x:Name="RefreshBtn"
+                    Text="Refresh Questions"
+                    FontSize="15"
+                    BackgroundColor="#fae04e"
+                    TextColor="Black"
+                    CornerRadius="30"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    HeightRequest="50"
+                    WidthRequest="200"
+                    Clicked="RefreshBtn_Clicked">
+                <Button.Shadow>
+                    <Shadow Brush="Black" Opacity="0.2" Radius="10" />
+                </Button.Shadow>
+            </Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

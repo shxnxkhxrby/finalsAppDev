@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizMaker.CreateQuiz"       
+             BackgroundColor="#3ebca3">
+
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#EA8D8D" Offset="0" />
+            <GradientStop Color="#A890FE" Offset="0.8" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center">
+        <Frame BackgroundColor="#00000000"  Padding="20" HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout Spacing="15" HorizontalOptions="Center">
+                <Image Source="quizlogo.png" 
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   HorizontalOptions="Center" />
+
+                <Label Text="Enter the number of question/s:"
+                   HorizontalTextAlignment="Center"
+                   FontSize="15" 
+                   TextColor="black"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center">
+
+                    <Button
+                    Text="-"
+                    TextColor="white"
+                    FontFamily="bold"
+                    FontSize="24"
+                    HeightRequest="40"
+                    BackgroundColor="#e93f5a"
+                    Clicked="AddNumber"
+                    />
+
+                    <Entry x:Name="NumberOfQuestions"
+                       WidthRequest="100"
+                       HorizontalTextAlignment="Center" 
+                       Margin="5"
+                       Placeholder="type here"
+                       FontSize="12"
+                       FontFamily="roboto"
+                       PlaceholderColor="AliceBlue"
+                       />
+
+                    <Button
+                    Text="+"
+                    FontFamily="bold"
+                    FontSize="18"
+                    HeightRequest="40"
+                    BackgroundColor="#fae04e"
+                    Clicked="SubNumber"
+                    />
+
+                </HorizontalStackLayout>
+
+                <Label Text="Number of existing questions"
+                   HorizontalTextAlignment="Center"
+                   FontSize="15"
+                   TextColor="black"/>
+
+                <!-- Display the actual number of existing questions -->
+                <Label x:Name="ExistingQuestionsLabel" 
+                       HorizontalTextAlignment="Center"
+                       FontSize="15"
+                       TextColor="black"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Margin="20">
+                    <Button Text="Clear"
+                        TextColor="White"
+                        BackgroundColor="#e93f5a"
+                        WidthRequest="100"
+                        Clicked="Clear" />
+                    <Button x:Name="Create"
+                        Text="Create"
+                        TextColor="Black"
+                        BackgroundColor="#fae04e"
+                        WidthRequest="100"
+                        Clicked="OnSubmitButtonClicked" />
+                </HorizontalStackLayout>
+
+            </StackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

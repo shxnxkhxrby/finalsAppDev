@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizMaker.MainPage"
+             BackgroundColor="#3ebca3"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#EA8D8D" Offset="0" />
+            <GradientStop Color="#A890FE" Offset="0.8" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Spacing="20" Padding="0" VerticalOptions="Center" Margin="20">
+        <StackLayout Spacing="10">
+            <!-- Image -->
+            <Image Source="quizlogo.png" WidthRequest="180" HeightRequest="180" HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Quiz Maker Application"
+                   FontSize="32"
+                   TextColor="Black" 
+                   FontFamily="BOLD"
+                   HorizontalOptions="Center"/>
+
+            <!-- Description -->
+            <Label Text="Welcome to the Quiz Maker! Click the button below to start creating questions."
+                   FontSize="15"
+                   HorizontalOptions="Center"
+                   TextColor="black"
+                   HorizontalTextAlignment="Center" />
+            <VerticalStackLayout>
+                <!-- Start Button -->
+                <Button x:Name="CounterBtn"
+                    Text="Start"
+                    FontSize="15"
+                    BackgroundColor="#fae04e"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    Padding="15"
+                    Clicked="Create"
+                    HorizontalOptions="Center"
+                    HeightRequest="50"
+                    WidthRequest="180"
+                    Margin="10" />
+                <Button x:Name="ExitBtn"
+                    Text="Exit"
+                    FontSize="15"
+                    BackgroundColor="#FF5F6D"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    Padding="15"
+                    Clicked="Exit"
+                    HorizontalOptions="Center"
+                    HeightRequest="50"
+                    WidthRequest="180" />
+            </VerticalStackLayout>
+
+        </StackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>

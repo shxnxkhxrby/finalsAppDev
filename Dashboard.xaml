@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizMaker.Dashboard"
+             Title="Quiz Creation"
+             BackgroundColor="#3ebca3">
+
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#EA8D8D" Offset="0" />
+            <GradientStop Color="#A890FE" Offset="0.8" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView HorizontalOptions="CenterAndExpand" Margin="0,40,0,40">
+        <!-- Outer Frame to wrap all content and center it -->
+        <Frame BorderColor="Black" BackgroundColor="#00000000" CornerRadius="10" HorizontalOptions="Center" VerticalOptions="Center">
+            <VerticalStackLayout Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="quizlogo.png" 
+               WidthRequest="100"
+               HeightRequest="100"
+               HorizontalOptions="Center" />
+                <!-- Label for the page -->
+                <Label Text="Review Questions"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       TextColor="black"
+                       Margin="20"/>
+
+                <!-- StackLayout where dynamic question entries will be added -->
+                <StackLayout x:Name="QuestionsContainer" Spacing="10">
+                    <!-- The dynamic entries will be added here -->
+                </StackLayout>
+                    <VerticalStackLayout Spacing="10" Margin="0,30,0,0">
+                        <!-- Submit Button -->
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                            <Button Text="Submit"
+                                    TextColor="Black"
+                                    BackgroundColor="#fae04e"
+                                    WidthRequest="100"
+                                    Clicked="OnSubmitButtonClicked" />
+                        </HorizontalStackLayout>
+
+                        <!-- Back Button -->
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                        <Button Text="Back"
+                                    TextColor="Black"
+                                    BackgroundColor="#fae04e"
+                                    WidthRequest="100"
+                                    Clicked="OnBackButtonClicked" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </ScrollView>
+</ContentPage>

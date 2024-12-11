@@ -1,0 +1,83 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="QuizMaker.Answer"
+             Title="Answer the Questions"
+             BackgroundColor="#e0f7fa">
+    <!-- Light Teal background for better contrast -->
+
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#EA8D8D" Offset="0" />
+            <GradientStop Color="#A890FE" Offset="0.8" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30" Margin="30">
+            <StackLayout Spacing="20" HorizontalOptions="Center">
+                <Image Source="quizlogo.png" 
+                       WidthRequest="180"
+                       HeightRequest="180"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Answer the questions below and submit your answers."
+                       FontSize="20"
+                       HorizontalOptions="Center"
+                       TextColor="#000000"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Margin="0,0,0,30"
+                       />
+            </StackLayout>
+
+            <StackLayout x:Name="QuestionAnswerStackLayout" Spacing="20" Padding="10">
+                <!-- Dynamically generated questions and answers will appear here -->
+            </StackLayout>
+
+            <Button x:Name="SubmitBtn"
+                    Text="Submit Answers"
+                    FontSize="15"
+                    BackgroundColor="#fae04e"
+                TextColor="Black"
+                    CornerRadius="25"
+                    Padding="15"
+                    Clicked="OnSubmitAnswersClicked"
+                    HorizontalOptions="Center"
+                    HeightRequest="60"
+                    WidthRequest="250"
+                    Margin="15" />
+
+            <Label x:Name="ScoreLabel" FontSize="18" HorizontalOptions="CenterAndExpand" TextColor="#A8D8D8" />
+                <!-- Dark Green for score -->
+
+                <Button x:Name="ViewResultBtn"
+                    Text="View Results"
+                    FontSize="20"
+                    BackgroundColor="#F5B8D1"
+                    TextColor="White"
+                    CornerRadius="25"
+                    Padding="15"
+                    Clicked="OnViewResultsClicked"
+                    HorizontalOptions="Center"
+                    HeightRequest="60"
+                    WidthRequest="250"
+                    Margin="10,0,0,0"
+                    IsVisible="False"/>
+
+                    <!-- New Answer Again Button -->
+                    <Button x:Name="AnswerAgainBtn"
+                    Text="Answer Again"
+                    FontSize="20"
+                    BackgroundColor="#F5A6B5" 
+                        TextColor="White"
+                    CornerRadius="25"
+                    Padding="15"
+                    Clicked="OnAnswerAgainClicked"
+                    HorizontalOptions="Center"
+                    HeightRequest="60"
+                    WidthRequest="250"
+                    Margin="10,0,0,0"
+                    IsVisible="False"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
